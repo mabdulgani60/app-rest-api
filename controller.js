@@ -43,3 +43,19 @@ exports.postmahasiswa = (req,res) => {
             }
         })
 }
+
+exports.putmahasiswa = (req, res) => {
+    let id = req.params.id
+    let nama = req.body.nama
+    let nim = req.body.nim
+    let jurusan = req.body.jurusan
+
+    connection.query('UPDATE mahasiswa SET nama=?, nim=?, jurusan=? WHERE id_mahasiswa=?', [nama,nim,jurusan,id],
+        (error) => {
+            if(error){
+                console.log(error)
+            }else{
+                response.ok("Update Data Success", res)
+            }
+        })
+}

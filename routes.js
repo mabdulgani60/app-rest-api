@@ -14,4 +14,7 @@ module.exports = (app) => {
 
     app.route('/mahasiswa')
         .post(jsonku.postmahasiswa);
+
+    app.route('/mahasiswa/:id')
+        .put(jsonku.putmahasiswa);
 }
