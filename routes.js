@@ -17,4 +17,7 @@ module.exports = (app) => {
 
     app.route('/mahasiswa/:id')
         .put(jsonku.putmahasiswa);
+
+    app.route('/mahasiswa/:id')
+        .delete(jsonku.deletemahasiswa);
 }

@@ -59,3 +59,16 @@ exports.putmahasiswa = (req, res) => {
             }
         })
 }
+
+exports.deletemahasiswa = (req, res) => {
+    let id = req.params.id
+
+    connection.query('DELETE FROM mahasiswa WHERE id_mahasiswa=?', [id],
+        (error) => {
+            if(error){
+                console.log(error)
+            }else{
+                response.ok('Delete Data Success', res)
+            }
+        })
+}
