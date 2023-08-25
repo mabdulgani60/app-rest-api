@@ -4,5 +4,8 @@ module.exports = (app) => {
     var jsonku = require('./controller');
 
     app.route('/')
-        .get(jsonku.index)
+        .get(jsonku.index);
+
+    app.route('/mahasiswa')
+        .get(jsonku.getmahasiswa);
 }
