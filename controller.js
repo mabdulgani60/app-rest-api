@@ -16,3 +16,15 @@ exports.getmahasiswa = (req,res) => {
         }
     })
 }
+
+exports.getmahasiswabyid = (req,res) => {
+    let id = req.params.id;
+    connection.query('SELECT * FROM mahasiswa WHERE id_mahasiswa = ?', [id], 
+        (error, rows, field) => {
+            if (error){
+                connection.log(error)
+            }else{
+                response.ok(rows, res)
+            }
+        })
+}
